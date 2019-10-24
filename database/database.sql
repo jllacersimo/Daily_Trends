@@ -36,9 +36,9 @@ CREATE TABLE feeds(
 CREATE TABLE favorites(
     id              int(255) auto_increment not null,
     publisher_id    int(255),
-    image_id        int(255),
+    feed_id         int(255),
     date            date,
     CONSTRAINT pk_favorites PRIMARY KEY(id),
     CONSTRAINT fk_favorites_publishers FOREIGN KEY(publisher_id) REFERENCES publishers(id),
-    CONSTRAINT fk_favorites_images FOREIGN KEY(image_id) REFERENCES images(id)
+    CONSTRAINT fk_favorites_feeds FOREIGN KEY(feed_id) REFERENCES feeds(id)
 )ENGINE=InnoDb;

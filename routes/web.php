@@ -18,3 +18,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/subir-noticia', 'FeedController@create')->name('feed.create');
+Route::post('/feed/save', 'FeedController@save')->name('feed.save');

@@ -4,15 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Like extends Model
+class Favorite extends Model
 {
     protected $table='favorites';
 
     public $timestamps = false;
 
     //Relación de Muchos a Uno
-    public function publisher(){
-        return $this->belongsTo('App\Publisher', 'publisher_id');
+    public function user(){
+        return $this->belongsTo('App\User', 'user_id');
     }
 
     //Relación de muchos a uno
